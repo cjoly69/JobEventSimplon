@@ -1,21 +1,43 @@
-h1{
-  color:#3B7BAC;
-  font-family: sans-serif;
+.container-fluid img {
+  height: 35%;
+  width: 35%;
+  margin-top: 11%;
+  margin-bottom: 1%;
+  margin-left: 30%;
 }
-input{
-  border-color:#3B7BAC;
-  width:30vh;
-  height: 5vh;
-  font-size: 20px;
-}
-li{
-  color:#3B7BAC;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 20px;
+
+.container-fluid,
+body,
+html {
 
 }
-.fait{
-  text-decoration: line-through;
-color:red;
+
+#env {
+  border:2px solid #C3C3C3;
+  box-shadow: 1px 1px 10px 0px #656565;
+  background-color: #fbfbfb;
+}
+
+form {
+
+  padding-top: 5%;
+  padding-bottom: 15%;
+}
+
+button.btn {
+  background-color: #ff1866;
+  color: #fff;
+  border-radius: 40px;
+}
+
+button.btn:hover {
+  background-color: #ff2f75;
+  color: #fff;
+}
+
+div.container-fluid {
+  margin-top: 5%;
+}
+img{
+  text-align: center;
 }

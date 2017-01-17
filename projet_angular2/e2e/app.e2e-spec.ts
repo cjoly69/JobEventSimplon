@@ -1,10 +1,10 @@
-import { FormulairePage } from './app.po';
+import { JobeventPage } from './app.po';
 
-describe('formulaire App', function() {
-  let page: FormulairePage;
+describe('jobevent App', function() {
+  let page: JobeventPage;
 
   beforeEach(() => {
-    page = new FormulairePage();
+    page = new JobeventPage();
   });
 
   it('should display message saying app works', () => {

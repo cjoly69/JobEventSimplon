@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class FormulairePage {
+export class JobeventPage {
   navigateTo() {
     return browser.get('/');
   }
