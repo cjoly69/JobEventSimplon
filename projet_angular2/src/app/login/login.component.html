@@ -1,0 +1,63 @@
+<style>
+.container-fluid img {
+  height: 35%;
+  width: 35%;
+  margin-top: 11%;
+  margin-bottom: 1%;
+  margin-left: 30%;
+}
+
+.container-fluid,
+body,
+html {
+
+}
+
+#env {
+  border:2px solid #C3C3C3;
+  box-shadow: 1px 1px 10px 0px #656565;
+  background-color: #fbfbfb;
+}
+
+form {
+
+  padding-top: 5%;
+  padding-bottom: 15%;
+}
+
+button.btn {
+  background-color: #ff1866;
+  color: #fff;
+  border-radius: 40px;
+}
+
+button.btn:hover {
+  background-color: #ff2f75;
+  color: #fff;
+}
+
+div.container-fluid {
+  margin-top: 5%;
+}
+img{
+  text-align: center;
+}
+</style>
+<div [ngClass]="'container-fluid'">
+  <div id="env" [ngClass]="'col-md-4 col-md-offset-4'">
+    <img src="http://lyon.simplon.co/wp-content/uploads/2015/08/142326-Simplon-logo-simplon.lyon-polygone.jpg" alt="Logo idea" [ngClass]="'img-responsive'" />
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm" >
+      <div [ngClass]="'form-group'">
+        <label for="login">Identifiant:</label>
+        <input [(ngModel)] = "login" login = "login" type="text" id="login" [ngModelOptions]="{standalone: true}" [ngClass]="'form-control'" placeholder="Identifiant" required/>
+        <label for="password">Mot de passe:</label>
+        <input [(ngModel)] = "pass" pass= "pass"type="password" id="password" [ngModelOptions]="{standalone: true}" [ngClass]="'form-control'" placeholder="Mot de passe" required />
+      </div> <!-- form group -->
+        <button type=submit [ngClass]="'btn btn-lg btn-block'">Se connecter</button>
+      <a href="#!"><p [ngClass]="'text-center'">Mot de passe oublié?</p></a>
+      <a href="/inscription"><p [ngClass]="'text-center'">S'inscrire?</p></a>
+      <a href="/event"><p [ngClass]="'text-center'">Voir les prochains evenements</p></a>
+    </form>
+    </div> <!-- #env -->
+</div>
+<pre>{{login}}.{{pass}}</pre>

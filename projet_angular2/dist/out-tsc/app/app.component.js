@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'app works!';
     }
     return AppComponent;
 }());
