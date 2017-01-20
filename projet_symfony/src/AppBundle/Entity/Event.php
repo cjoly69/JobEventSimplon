@@ -12,6 +12,31 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Event
 {
+  /**
+  *@ORM\OneToOne(targetEntity="AppBundle\Entity\Description", cascade={"persist"})
+  *@ORM\JoinColumn(nullable=false)
+  */
+
+  private $description;
+
+  /**
+  *@ORM\OneToMany(targetEntity="AppBundle\Entity\Rencontre",mappedBy="event", cascade={"persist"})
+  *@ORM\JoinColumn(nullable=false)
+  */
+  
+  private $rencontres;
+
+
+  //definition des accesseurs
+  public function setDescription (Description $description=null)
+  {
+    $this->description=$description;
+  }
+
+  public function getDescription()
+  {
+    return $this->description;
+  }
     /**
      * @var int
      *
@@ -94,4 +119,3 @@ class Event
         return $this->date;
     }
 }
-

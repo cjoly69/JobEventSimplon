@@ -10,8 +10,16 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="entreprise")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EntrepriseRepository")
  */
+
 class Entreprise
 {
+/**
+  *@ORM\OneToMany(targetEntity="AppBundle\Entity\Rencontre", mappedBy="entreprise", cascade={"persist"})
+  *@ORM\JoinColumn(nullable=false)
+  */
+  
+  private $rencontres;
+
     /**
      * @var int
      *
@@ -94,4 +102,3 @@ class Entreprise
         return $this->recName;
     }
 }
-

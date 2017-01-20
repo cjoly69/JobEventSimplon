@@ -10,8 +10,30 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="rencontre")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\RencontreRepository")
  */
+
 class Rencontre
 {
+  /**
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="rencontres")
+    * @ORM\JoinColumn(nullable=false)
+    */
+   private $user;
+
+   /**
+   * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Event", inversedBy="rencontres")
+   * @ORM\JoinColumn(nullable=false)
+   */
+
+   private $event;
+
+   /**
+   * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Entreprise", inversedBy="rencontres")
+   * @ORM\JoinColumn(nullable=false)
+   */
+   
+   private $entreprise;
+
+
     /**
      * @var int
      *
@@ -32,4 +54,3 @@ class Rencontre
         return $this->id;
     }
 }
-

@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User
 {
+  /**
+  *@ORM\OneToMany(targetEntity="AppBundle\Entity\Rencontre",mappedBy="user", cascade={"persist"})
+  *@ORM\JoinColumn(nullable=false)
+  */
+  private $rencontres;
+
     /**
      * @var int
      *
