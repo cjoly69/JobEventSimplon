@@ -8,9 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { ComCreaEventService } from './com-crea-event.service';
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(comCreaEventService) {
+        this.comCreaEventService = comCreaEventService;
+        comCreaEventService.variableTest = 1;
+        console.log(this.comCreaEventService.eventDetails);
     }
+    AppComponent.prototype.test = function () {
+        console.log('ok');
+        console.log(this.comCreaEventService.eventDetails);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -19,7 +27,7 @@ AppComponent = __decorate([
         templateUrl: './app.component.html',
         styleUrls: ['./app.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [ComCreaEventService])
 ], AppComponent);
 export { AppComponent };
 //# sourceMappingURL=../../../src/app/app.component.js.map

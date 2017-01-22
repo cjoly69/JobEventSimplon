@@ -7,9 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 var NgbdDatepickerCustomdayComponent = (function () {
     function NgbdDatepickerCustomdayComponent() {
+        this.evenement = new EventEmitter();
     }
     NgbdDatepickerCustomdayComponent.prototype.ngOnInit = function () {
     };
@@ -20,8 +21,16 @@ var NgbdDatepickerCustomdayComponent = (function () {
     NgbdDatepickerCustomdayComponent.prototype.isDisabled = function (date, current) {
         return date.month !== current.month;
     };
+    NgbdDatepickerCustomdayComponent.prototype.eventChoice = function (date) {
+        this.evenement.emit(this.model);
+        console.log(this.model);
+    };
     return NgbdDatepickerCustomdayComponent;
 }());
+__decorate([
+    Output(),
+    __metadata("design:type", EventEmitter)
+], NgbdDatepickerCustomdayComponent.prototype, "evenement", void 0);
 NgbdDatepickerCustomdayComponent = __decorate([
     Component({
         selector: 'app-ngbd-datepicker-customday',

@@ -1,0 +1,97 @@
+
+<style>
+.container-fluid img {
+  height: 35%;
+  width: 35%;
+  margin-top: 11%;
+  margin-bottom: 1%;
+  margin-left: 30%;
+}
+
+.container-fluid,
+body,
+html {
+
+}
+
+#env {
+  border:2px solid #C3C3C3;
+  box-shadow: 1px 1px 10px 0px #656565;
+  background-color: #fbfbfb;
+}
+
+form {
+
+  padding-top: 5%;
+  padding-bottom: 15%;
+}
+
+button.btn {
+  background-color: #ff1866;
+  color: #fff;
+  border-radius: 40px;
+}
+
+button.btn:hover {
+  background-color: #ff2f75;
+  color: #fff;
+}
+
+div.container-fluid {
+  margin-top: 5%;
+}
+img{
+  text-align: center;
+}
+
+.custom-day {
+      text-align: center;
+      padding: 0.185rem 0.25rem;
+      border-radius: 0.25rem;
+      display: inline-block;
+      width: 2rem;
+    }
+    .custom-day:hover {
+      background-color: #e6e6e6;
+    }
+    .weekend {
+      background-color: #f0ad4e;
+      border-radius: 1rem;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+</style>
+
+<div [ngClass]="'container-fluid'" >
+  <div id="env" [ngClass]="'col-md-4 col-md-offset-4'">
+    <img src="http://lyon.simplon.co/wp-content/uploads/2015/08/142326-Simplon-logo-simplon.lyon-polygone.jpg" alt="Logo idea" [ngClass]="'img-responsive'" />
+    <form (ngSubmit)="creationEvent()" #heroForm="ngForm" >
+      <div [ngClass]="'form-group'">
+        <label for="login">nom de l'evenement</label>
+        <input [(ngModel)] = "this.evenementName" nomEvenement = "nomEvenement"  type="text" id="login" [ngModelOptions]="{standalone: true}" [ngClass]="'form-control'" placeholder="nom de l'evenement" required/>
+        <label for="password">nom de l'entreprise:</label>
+
+        <input [(ngModel)] = "this.evenementCreator" entreprise= "entreprise" type="text" id="password" [ngModelOptions]="{standalone: true}" [ngClass]="'form-control'" placeholder="entreprise" required />
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp" [(ngModel)]="model" ngbDatepicker [dayTemplate]="customDay" [markDisabled]="isDisabled" #d="ngbDatepicker">
+          <div class="input-group-addon" (click)="d.toggle()"  >
+            <img src="http://hastypudding.org/assets/images/icon-calendar-blue.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </div>
+        </div>
+        <template  #customDay let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled">
+          <span class="custom-day" [class.weekend]="isWeekend(date)"
+                [class.bg-primary]="selected" [class.hidden]="date.month !== currentMonth" [class.text-muted]="disabled">
+            {{ date.day }}
+          </span>
+        </template>
+        <label for="login">description</label>
+        <input [(ngModel)] = "this.evenementDescription" descriptionEvenement = "descriptionEvenement"  type="text" id="description" [ngModelOptions]="{standalone: true}" [ngClass]="'form-control'" placeholder="nom de l'evenement" required/>
+      </div> <!-- form group -->
+        <button type=submit [ngClass]="'btn btn-lg btn-block'">creer evenement</button>
+        </form>
+        </div>
+
+    </div> <!-- #env -->
