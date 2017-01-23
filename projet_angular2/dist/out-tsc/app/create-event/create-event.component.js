@@ -7,15 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { ComCreaEventService } from '../com-crea-event.service';
 var CreateEventComponent = (function () {
     function CreateEventComponent(comCreaEventService) {
         this.comCreaEventService = comCreaEventService;
-        this.creator = new EventEmitter();
         this.eventTab = [];
         this.enterTab = [];
-        comCreaEventService.variableTest == this.evenementDay;
     }
     CreateEventComponent.prototype.ngOnInit = function () {
     };
@@ -26,19 +24,16 @@ var CreateEventComponent = (function () {
         return date.month !== current.month;
     };
     CreateEventComponent.prototype.creationEvent = function () {
-        this.evenementDay = this.model.day;
-        var a = { day: this.evenementDay.toString(), nom: this.evenementName.toString(), description: this.evenementDescription.toString() };
-        var b = { entreprise: this.evenementCreator.toString() };
-        console.log(a);
-        console.log(b);
-        this.comCreaEventService.eventDetails = a.toString() + b.toString();
+        this.evenementDay = { year: this.model.year, month: this.model.month, day: this.model.day };
+        var a = { day: this.evenementDay, nom: this.evenementName, description: this.evenementDescription };
+        var b = { entreprise: this.evenementCreator };
+        this.comCreaEventService.eventInfo.push(a);
+        this.comCreaEventService.company.push(b);
+        console.log(this.comCreaEventService.eventInfo);
+        console.log(this.comCreaEventService.company);
     };
     return CreateEventComponent;
 }());
-__decorate([
-    Output(),
-    __metadata("design:type", EventEmitter)
-], CreateEventComponent.prototype, "creator", void 0);
 CreateEventComponent = __decorate([
     Component({
         selector: 'app-create-event',

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import './rxjs-operators';
 
 import { ComCreaEventService } from './com-crea-event.service';
 
@@ -13,14 +14,17 @@ import { ComCreaEventService } from './com-crea-event.service';
 export class AppComponent {
 
 constructor(public comCreaEventService: ComCreaEventService) {
-comCreaEventService.variableTest = 1 ;
-console.log(this. comCreaEventService.eventDetails);
+this.comCreaEventService.companys = [] ;
+this.comCreaEventService.eventInfos = [];
+this.comCreaEventService.UserNames = [];
+this.comCreaEventService.UserPasswords = [];
+this.comCreaEventService.UserMails = [];
 }
 
 test() {
   console.log('ok');
-  console.log(this.comCreaEventService.eventDetails);
-}
+
+  }
 
 
 }

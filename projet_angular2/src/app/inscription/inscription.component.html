@@ -47,28 +47,35 @@ img{
 
   <div id="env" [ngClass]="'col-md-4 col-md-offset-4'">
 <img src="http://lyon.simplon.co/wp-content/uploads/2015/08/142326-Simplon-logo-simplon.lyon-polygone.jpg" alt="Logo idea" [ngClass]="'img-responsive'" />
-<form  #inscriptionForm="ngForm">
+<form  #Formname="ngForm" >
 <div [ngClass]="'form-group'">
 
-  <label for="example-text-input" [ngClass]="'col-md-2'">Email</label>
+  <label for="example-text-input" [ngClass]="'col-md-2'">Nom d'utilisateur</label>
   <div [ngClass]="'col-md-10'">
-    <input [ngClass]="'form-control'" type="text" value="" id="example-text-input">
+    <input [(ngModel)]= "userName" userName="userName"[ngClass]="'form-control'" type="text" [ngModelOptions]="{standalone: true}" value="" id="example-text-input" required>
   </div>
 </div>
 <div [ngClass]="'form-group'">
-  <label for="example-search-input" [ngClass]="'col-md-2 '">Mot de passe</label>
+  <label for="example-search-input" [ngClass]="'col-md-2 '">Email</label>
   <div [ngClass]="'col-md-10'">
-    <input [ngClass]="'form-control'" type="password" value="" id="example-search-input">
+    <input [(ngModel)]="userMail" userMail="userMail"[ngClass]="'form-control'" [ngModelOptions]="{standalone: true}" type="email" value="" id="example-search-input" required>
   </div>
 </div>
 <div [ngClass]="'form-group'">
-  <label for="example-search-input" [ngClass]="'col-md-2 '">Confirmation</label>
+  <label for="example-search-input" [ngClass]="'col-md-2 '">password</label>
   <div [ngClass]="'col-md-10'">
-    <input [ngClass]="'form-control'" type="password" value="" id="example-search-input">
+    <input [(ngModel)]= "Password" Password="Password"[ngClass]="'form-control'" [ngModelOptions]="{standalone: true}" name = "Password" type="password" id="example-search-input" required  validateEqualTo="confirm">
+  </div>
+<label for="example-search-input" [ngClass]="'col-md-2 '">Confirmation</label>
+  <div [ngClass]="'col-md-10'">
+    <input [(ngModel)]= "ConfirmPassword" ConfirmPassword="ConfirmPassword" [ngModelOptions]="{standalone: true}" name="confirm"[ngClass]="'form-control'" type="password"  id="example-search-input"  required validateEqualTo="Password" >
   </div>
 </div>
 
-<button type=submit [ngClass]="'btn btn-lg btn-block'">S'inscrire</button>
+
+<button type=submit [ngClass]="'btn btn-lg btn-block'" >S'inscrire</button>
+
 </form>
 </div>
 </div>
+<pre>{{userName}}.{{userMail}}</pre>

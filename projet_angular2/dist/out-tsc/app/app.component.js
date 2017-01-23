@@ -8,16 +8,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import './rxjs-operators';
 import { ComCreaEventService } from './com-crea-event.service';
 var AppComponent = (function () {
     function AppComponent(comCreaEventService) {
         this.comCreaEventService = comCreaEventService;
-        comCreaEventService.variableTest = 1;
-        console.log(this.comCreaEventService.eventDetails);
+        this.comCreaEventService.companys = [];
+        this.comCreaEventService.eventInfos = [];
+        this.comCreaEventService.UserNames = [];
+        this.comCreaEventService.UserPasswords = [];
+        this.comCreaEventService.UserMails = [];
     }
     AppComponent.prototype.test = function () {
         console.log('ok');
-        console.log(this.comCreaEventService.eventDetails);
     };
     return AppComponent;
 }());

@@ -8,6 +8,11 @@ export class ComCreaEventService {
 
   constructor() { }
 
-  variableTest:any;
-  eventDetails:any;  
+  companys:any;
+  eventInfos:any;
+  UserNames:any;
+  UserMails:any;
+  UserPasswords: any;
+
+
 }

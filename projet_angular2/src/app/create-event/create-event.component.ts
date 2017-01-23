@@ -14,7 +14,7 @@ import { ComCreaEventService } from '../com-crea-event.service';
 
 })
 export class CreateEventComponent implements OnInit {
-  @Output() creator:EventEmitter<any>=  new EventEmitter();
+
   evenementDay:any;
   evenementCreator:any;
   evenementName:any;
@@ -30,7 +30,7 @@ export class CreateEventComponent implements OnInit {
 
 
   constructor(public comCreaEventService: ComCreaEventService) {
-      comCreaEventService.variableTest == this. evenementDay ;
+
 
 
   }
@@ -44,15 +44,13 @@ export class CreateEventComponent implements OnInit {
     }
 
     creationEvent(){
-
-    this. evenementDay = this.model.day;
-    var a = {day:this.evenementDay.toString(), nom:this.evenementName.toString(), description:this.evenementDescription.toString()};
-    var b = {entreprise:this.evenementCreator.toString()};
-
-
-    console.log(a);
-    console.log(b);
-    this. comCreaEventService.eventDetails = a.toString() + b.toString() ;
+    this. evenementDay = {year:this. model.year, month:this.model.month, day:this.model.day};
+    var a = {day:this.evenementDay, nom:this.evenementName, description:this.evenementDescription};
+    var b = {entreprise:this.evenementCreator};
+    this. comCreaEventService.eventInfo.push(a);
+    this.comCreaEventService.company.push(b);
+    console.log(this.comCreaEventService.eventInfo);
+    console.log(this.comCreaEventService.company);
 
 
 

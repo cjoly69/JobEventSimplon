@@ -8,10 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { ComCreaEventService } from '../com-crea-event.service';
 var InscriptionComponent = (function () {
-    function InscriptionComponent() {
+    function InscriptionComponent(comCreaEventService) {
+        this.comCreaEventService = comCreaEventService;
     }
     InscriptionComponent.prototype.ngOnInit = function () {
+    };
+    InscriptionComponent.prototype.register = function () {
+        this.comCreaEventService.UserMails.push(this.userName);
+        this.comCreaEventService.UserNames.push(this.userMail);
+        this.comCreaEventService.UserPasswords.push(this.Password);
     };
     return InscriptionComponent;
 }());
@@ -21,7 +28,7 @@ InscriptionComponent = __decorate([
         templateUrl: './inscription.component.html',
         styleUrls: ['./inscription.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [ComCreaEventService])
 ], InscriptionComponent);
 export { InscriptionComponent };
 //# sourceMappingURL=../../../../src/app/inscription/inscription.component.js.map
