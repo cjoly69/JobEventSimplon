@@ -22,6 +22,7 @@ import { NgbdDatepickerCustomdayComponent } from './ngbd-datepicker-customday/ng
 import { EvenementsComponent } from './evenements/evenements.component';
 import { EventsComponent } from './events/events.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { HttpserviceService } from './httpservice.service';
 var routingAppli = [{ path: 'inscription', component: InscriptionComponent },
     { path: 'login', component: LoginComponent },
     { path: 'event', component: EventsComponent },
@@ -51,7 +52,7 @@ AppModule = __decorate([
             NgbModule.forRoot(),
             RouterModule.forRoot(routingAppli)
         ],
-        providers: [ComCreaEventService],
+        providers: [ComCreaEventService, HttpserviceService],
         bootstrap: [AppComponent]
     }),
     __metadata("design:paramtypes", [])

@@ -8,14 +8,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
+import { HttpserviceService } from './httpservice.service';
 var ComCreaEventService = (function () {
-    function ComCreaEventService() {
+    function ComCreaEventService(httpserviceService) {
+        this.httpserviceService = httpserviceService;
     }
     return ComCreaEventService;
 }());
 ComCreaEventService = __decorate([
     Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [HttpserviceService])
 ], ComCreaEventService);
 export { ComCreaEventService };
 //# sourceMappingURL=../../../src/app/com-crea-event.service.js.map

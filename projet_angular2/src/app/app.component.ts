@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import './rxjs-operators';
+
 
 import { ComCreaEventService } from './com-crea-event.service';
 

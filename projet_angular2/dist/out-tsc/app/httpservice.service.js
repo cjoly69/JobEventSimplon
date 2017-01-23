@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import './rxjs-operators';
 var HttpserviceService = (function () {
     function HttpserviceService(http) {
         this.http = http;

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,6 +14,8 @@ import { NgbdDatepickerCustomdayComponent } from './ngbd-datepicker-customday/ng
 import { EvenementsComponent } from './evenements/evenements.component';
 import { EventsComponent } from './events/events.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { HttpserviceService } from './httpservice.service';
+
 const routingAppli : Routes = [{path:'inscription', component: InscriptionComponent},
                                 {path: 'login', component: LoginComponent},
                                 {path: 'event', component:EventsComponent},
@@ -30,6 +32,7 @@ const routingAppli : Routes = [{path:'inscription', component: InscriptionCompon
     EventsComponent,
     CreateEventComponent
 
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ const routingAppli : Routes = [{path:'inscription', component: InscriptionCompon
     NgbModule.forRoot(),
     RouterModule.forRoot(routingAppli)
   ],
-  providers: [ComCreaEventService],
+  providers: [ComCreaEventService, HttpserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,10 +27,10 @@ var CreateEventComponent = (function () {
         this.evenementDay = { year: this.model.year, month: this.model.month, day: this.model.day };
         var a = { day: this.evenementDay, nom: this.evenementName, description: this.evenementDescription };
         var b = { entreprise: this.evenementCreator };
-        this.comCreaEventService.eventInfo.push(a);
-        this.comCreaEventService.company.push(b);
-        console.log(this.comCreaEventService.eventInfo);
-        console.log(this.comCreaEventService.company);
+        this.comCreaEventService.eventInfos.push(a);
+        this.comCreaEventService.companys.push(b);
+        console.log(this.comCreaEventService.eventInfos);
+        console.log(this.comCreaEventService.companys);
     };
     return CreateEventComponent;
 }());

@@ -47,7 +47,7 @@ img{
 
   <div id="env" [ngClass]="'col-md-4 col-md-offset-4'">
 <img src="http://lyon.simplon.co/wp-content/uploads/2015/08/142326-Simplon-logo-simplon.lyon-polygone.jpg" alt="Logo idea" [ngClass]="'img-responsive'" />
-<form  #Formname="ngForm" >
+<form (submit) = "register()" #Formname="ngForm" >
 <div [ngClass]="'form-group'">
 
   <label for="example-text-input" [ngClass]="'col-md-2'">Nom d'utilisateur</label>
