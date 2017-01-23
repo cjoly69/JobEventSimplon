@@ -34,16 +34,14 @@ export class CreateEventComponent implements OnInit {
 
 
   }
-    isWeekend(date: NgbDateStruct) {
-      const d = new Date(date.year, date.month - 1, date.day);
 
-    }
 
     isDisabled(date: NgbDateStruct, current: {month: number}) {
       return date.month !== current.month;
     }
 
     creationEvent(){
+    /* recuperation des données lors de la création d'un event*/
     this. evenementDay = {year:this. model.year, month:this.model.month, day:this.model.day};
     var a = {day:this.evenementDay, nom:this.evenementName, description:this.evenementDescription};
     var b = {entreprise:this.evenementCreator};

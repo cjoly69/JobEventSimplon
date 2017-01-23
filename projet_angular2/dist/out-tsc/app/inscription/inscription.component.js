@@ -19,6 +19,7 @@ var InscriptionComponent = (function () {
         this.comCreaEventService.UserMails.push(this.userName);
         this.comCreaEventService.UserNames.push(this.userMail);
         this.comCreaEventService.UserPasswords.push(this.Password);
+        console.log(this.comCreaEventService.UserMails);
     };
     return InscriptionComponent;
 }());

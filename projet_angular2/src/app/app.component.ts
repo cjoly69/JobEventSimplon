@@ -14,6 +14,7 @@ import { ComCreaEventService } from './com-crea-event.service';
 export class AppComponent {
 
 constructor(public comCreaEventService: ComCreaEventService) {
+/* données à passer dans une futur requete http*/
 this.comCreaEventService.companys = [] ;
 this.comCreaEventService.eventInfos = [];
 this.comCreaEventService.UserNames = [];
