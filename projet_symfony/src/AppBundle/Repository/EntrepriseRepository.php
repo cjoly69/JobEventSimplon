@@ -10,4 +10,10 @@ namespace AppBundle\Repository;
  */
 class EntrepriseRepository extends \Doctrine\ORM\EntityRepository
 {
+  function all(){
+
+    $test = $this->createQueryBuilder('a');
+    $query = $test->getQuery()->getResult();
+    return $query;
+  }
 }
